@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "submitFeedback",
+    "name": "fetchFeedback",
     "datasource": {
       "pluginId": "postgres-plugin",
       "messages": [],
@@ -12,12 +12,11 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "3 Feeedback Form",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "INSERT INTO candidate_feedback\n  (id,interviewer, application_id, feedback, rating)\nVALUES\n  (\n\t\t{{getRowCount.data[0].count+1}},\n    '{{ appsmith.user.email }}',\n    {{ appsmith.URL.queryParams.appId}},\n    '{{ feedbackInput.text }}',\n\t\t{{Rating1.value}}\n  );\n",
+      "body": "SELECT * FROM candidate_feedback where application_id = '{{ application_table.selectedRow.id}}' ORDER BY id LIMIT 3;",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
@@ -26,6 +25,7 @@
         }
       ]
     },
+    "executeOnLoad": true,
     "dynamicBindingPathList": [
       {
         "key": "body"
@@ -35,18 +35,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "Rating1.value",
-      "appsmith.URL.queryParams.appId",
-      "appsmith.user.email",
-      "feedbackInput.text",
-      "getRowCount.data[0].count+1"
+      "application_table.selectedRow.id"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "3 Feeedback Form_submitFeedback",
+  "id": "null_fetchFeedback",
   "deleted": false,
-  "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.039656860Z"
+  "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.243183051Z"
 }

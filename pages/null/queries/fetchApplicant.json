@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "getApplications",
+    "name": "fetchApplicant",
     "datasource": {
       "pluginId": "postgres-plugin",
       "messages": [],
@@ -12,12 +12,11 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "1 Track Applications",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "SELECT * FROM job_applications where application_status {{ status_dropdown.selectedOptionValue === \"All\" ? \"ilike '%'\": \"= '\" + status_dropdown.selectedOptionValue + \"'\" }}  ORDER BY id DESC LIMIT {{application_table.pageSize}} offset {{(application_table.pageNo - 1) * application_table.pageSize}};",
+      "body": "SELECT * FROM job_applications where id = {{appsmith.URL.queryParams.appId}} LIMIT 1;",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
@@ -36,16 +35,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "(application_table.pageNo - 1) * application_table.pageSize",
-      "application_table.pageSize",
-      "status_dropdown.selectedOptionValue === \"All\" ? \"ilike '%'\": \"= '\" + status_dropdown.selectedOptionValue + \"'\""
+      "appsmith.URL.queryParams.appId"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "1 Track Applications_getApplications",
+  "id": "null_fetchApplicant",
   "deleted": false,
-  "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.107570736Z"
+  "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.105365396Z"
 }

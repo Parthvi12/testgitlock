@@ -13,8 +13,7 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "1 Track Applications",
-    "collectionId": "1 Track Applications_Utils",
+    "collectionId": "null_Utils",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -41,7 +40,7 @@
     "policies": [],
     "userPermissions": []
   },
-  "id": "1 Track Applications_Utils.updateStatus",
+  "id": "null_Utils.updateStatus",
   "deleted": false,
   "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.116208732Z"
 }
