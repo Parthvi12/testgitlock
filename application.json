@@ -1,6 +1,18 @@
 {
   "pages": [
     {
+      "id": "2 Application Upload2",
+      "isDefault": false
+    },
+    {
+      "id": "3 Feeedback Form2",
+      "isDefault": false
+    },
+    {
+      "id": "1 Track Applications2",
+      "isDefault": false
+    },
+    {
       "id": "Page1",
       "isDefault": true
     }
@@ -8,7 +20,8 @@
   "viewMode": false,
   "appIsExample": false,
   "unreadCommentThreads": 0,
-  "color": "#ECECEC",
+  "color": "#C7F3E3",
+  "icon": "moon",
   "unpublishedCustomJSLibs": [],
   "publishedCustomJSLibs": [],
   "evaluationVersion": 2,
