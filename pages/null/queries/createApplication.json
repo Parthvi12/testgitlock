@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "updateApplicationStatus",
+    "name": "createApplication",
     "datasource": {
       "pluginId": "postgres-plugin",
       "messages": [],
@@ -12,12 +12,11 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "1 Track Applications",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "UPDATE job_applications\n  SET application_status = '{{applicant_status_dropdown.selectedOptionValue}}'\n  WHERE id = '{{ application_table.selectedRow.id }}';\n",
+      "body": "INSERT INTO job_applications\n  (candidate_name, candidate_email, candidate_phone_no, applied_role, application_datetime, application_status, resume_url)\nVALUES\n  (\n    '{{ name.text }}',\n\t\t'{{ email.text }}',\n\t\t'{{ phoneNo.text }}',\n    '{{ role.selectedOptionValue }}',\n\t\t'{{ (new Date()).toISOString() }}',\n\t\t'{{ 'Applied' }}',\n\t\t'{{Resume_URL.text}}'\n  );\n",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
@@ -35,15 +34,20 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "applicant_status_dropdown.selectedOptionValue",
-      "application_table.selectedRow.id"
+      "'Applied'",
+      "(new Date()).toISOString()",
+      "Resume_URL.text",
+      "email.text",
+      "name.text",
+      "phoneNo.text",
+      "role.selectedOptionValue"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "1 Track Applications_updateApplicationStatus",
+  "id": "null_createApplication",
   "deleted": false,
-  "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.219181863Z"
+  "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.103003030Z"
 }

@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "Query1",
+    "name": "setInterviewStatusScheduled",
     "datasource": {
       "pluginId": "postgres-plugin",
       "messages": [],
@@ -12,26 +12,36 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "1 Track Applications",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "SELECT * FROM public.\"job_applications\" LIMIT 200;",
-      "selfReferencingDataPaths": []
+      "body": "UPDATE job_applications\n  SET application_status = 'Interview Scheduled'\n  WHERE id = '{{ application_table.selectedRow.id }}';\n",
+      "selfReferencingDataPaths": [],
+      "pluginSpecifiedTemplates": [
+        {
+          "key": "preparedStatement",
+          "value": false
+        }
+      ]
     },
-    "executeOnLoad": false,
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [],
+    "jsonPathKeys": [
+      "application_table.selectedRow.id"
+    ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "1 Track Applications_Query1",
+  "id": "null_setInterviewStatusScheduled",
   "deleted": false,
-  "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.120418753Z"
+  "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.116885048Z"
 }

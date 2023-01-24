@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "createApplication",
+    "name": "submitFeedback",
     "datasource": {
       "pluginId": "postgres-plugin",
       "messages": [],
@@ -12,12 +12,11 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "2 Application Upload",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "INSERT INTO job_applications\n  (candidate_name, candidate_email, candidate_phone_no, applied_role, application_datetime, application_status, resume_url)\nVALUES\n  (\n    '{{ name.text }}',\n\t\t'{{ email.text }}',\n\t\t'{{ phoneNo.text }}',\n    '{{ role.selectedOptionValue }}',\n\t\t'{{ (new Date()).toISOString() }}',\n\t\t'{{ 'Applied' }}',\n\t\t'{{Resume_URL.text}}'\n  );\n",
+      "body": "INSERT INTO candidate_feedback\n  (id,interviewer, application_id, feedback, rating)\nVALUES\n  (\n\t\t{{getRowCount.data[0].count+1}},\n    '{{ appsmith.user.email }}',\n    {{ appsmith.URL.queryParams.appId}},\n    '{{ feedbackInput.text }}',\n\t\t{{Rating1.value}}\n  );\n",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
@@ -35,20 +34,18 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "'Applied'",
-      "(new Date()).toISOString()",
-      "Resume_URL.text",
-      "email.text",
-      "name.text",
-      "phoneNo.text",
-      "role.selectedOptionValue"
+      "Rating1.value",
+      "appsmith.URL.queryParams.appId",
+      "appsmith.user.email",
+      "feedbackInput.text",
+      "getRowCount.data[0].count+1"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "2 Application Upload_createApplication",
+  "id": "null_submitFeedback",
   "deleted": false,
-  "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.103003030Z"
+  "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.039656860Z"
 }

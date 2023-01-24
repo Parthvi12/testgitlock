@@ -1,7 +1,6 @@
 {
   "unpublishedCollection": {
     "name": "Utils",
-    "pageId": "1 Track Applications",
     "pluginId": "js-plugin",
     "pluginType": "JS",
     "actions": [],
@@ -19,7 +18,7 @@
     ],
     "userPermissions": []
   },
-  "id": "1 Track Applications_Utils",
+  "id": "null_Utils",
   "deleted": false,
   "gitSyncId": "63cf9f5b2267bc42f09f0092_63cfa31f2267bc42f09f00b7"
 }

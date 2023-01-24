@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "deleteApplication",
+    "name": "getRowCount",
     "datasource": {
       "pluginId": "postgres-plugin",
       "messages": [],
@@ -12,20 +12,14 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "2 Application Upload",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "DELETE FROM job_applications WHERE id = '4';\n",
-      "selfReferencingDataPaths": [],
-      "pluginSpecifiedTemplates": [
-        {
-          "key": "preparedStatement",
-          "value": false
-        }
-      ]
+      "body": "SELECT COUNT(*) FROM candidate_feedback",
+      "selfReferencingDataPaths": []
     },
+    "executeOnLoad": false,
     "dynamicBindingPathList": [],
     "isValid": true,
     "invalids": [],
@@ -36,7 +30,7 @@
     "policies": [],
     "userPermissions": []
   },
-  "id": "2 Application Upload_deleteApplication",
+  "id": "null_getRowCount",
   "deleted": false,
-  "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.105899872Z"
+  "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.118637721Z"
 }

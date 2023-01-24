@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "getRowCount",
+    "name": "Query1",
     "datasource": {
       "pluginId": "postgres-plugin",
       "messages": [],
@@ -12,12 +12,11 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "3 Feeedback Form",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "SELECT COUNT(*) FROM candidate_feedback",
+      "body": "SELECT * FROM public.\"job_applications\" LIMIT 200;",
       "selfReferencingDataPaths": []
     },
     "executeOnLoad": false,
@@ -31,7 +30,7 @@
     "policies": [],
     "userPermissions": []
   },
-  "id": "3 Feeedback Form_getRowCount",
+  "id": "null_Query1",
   "deleted": false,
-  "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.118637721Z"
+  "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.120418753Z"
 }

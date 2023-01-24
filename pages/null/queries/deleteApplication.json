@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "setInterviewStatusScheduled",
+    "name": "deleteApplication",
     "datasource": {
       "pluginId": "postgres-plugin",
       "messages": [],
@@ -12,12 +12,11 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "1 Track Applications",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "UPDATE job_applications\n  SET application_status = 'Interview Scheduled'\n  WHERE id = '{{ application_table.selectedRow.id }}';\n",
+      "body": "DELETE FROM job_applications WHERE id = '4';\n",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
@@ -26,23 +25,17 @@
         }
       ]
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
+    "dynamicBindingPathList": [],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [
-      "application_table.selectedRow.id"
-    ],
+    "jsonPathKeys": [],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "1 Track Applications_setInterviewStatusScheduled",
+  "id": "null_deleteApplication",
   "deleted": false,
-  "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.116885048Z"
+  "gitSyncId": "63cf9f5b2267bc42f09f0092_2023-01-24T09:21:35.105899872Z"
 }
