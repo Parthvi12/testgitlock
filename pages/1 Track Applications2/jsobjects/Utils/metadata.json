@@ -6,7 +6,6 @@
     "pluginType": "JS",
     "actions": [],
     "archivedActions": [],
-    "body": "export default {\n\tmyVar1: [],\n\tmyVar2: {},\n\tupdateStatus: () => {\n\t\tstoreValue('tableIndex',application_table.selectedRowIndex)\n\t\tupdateApplicationStatus.run(() => getApplications.run(), () => {})\n\t}\n}",
     "variables": [
       {
         "name": "myVar1",

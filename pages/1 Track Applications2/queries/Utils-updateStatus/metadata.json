@@ -19,7 +19,6 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  storeValue('tableIndex', application_table.selectedRowIndex);\n  updateApplicationStatus.run(() => getApplications.run(), () => {});\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": false
@@ -33,9 +32,6 @@
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [
-      "() => {\n  storeValue('tableIndex', application_table.selectedRowIndex);\n  updateApplicationStatus.run(() => getApplications.run(), () => {});\n}"
-    ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
