@@ -1,0 +1,68 @@
+{
+  "unpublishedPage": {
+    "name": "1 Track Applications2",
+    "slug": "1-track-applications2",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1160,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 840,
+          "containerStyle": "none",
+          "snapRows": 128,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 54,
+          "minHeight": 850,
+          "parentColumnSpace": 1,
+          "dynamicTriggerPathList": [],
+          "leftColumn": 0,
+          "dynamicBindingPathList": []
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "1 Track Applications2_fetchFeedback",
+              "name": "fetchFeedback",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "application_table.selectedRow.id"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "1 Track Applications2_getApplications",
+              "name": "getApplications",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "(application_table.pageNo - 1) * application_table.pageSize",
+                "application_table.pageSize",
+                "status_dropdown.selectedOptionValue === \"All\" ? \"ilike '%'\": \"= '\" + status_dropdown.selectedOptionValue + \"'\""
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "1 Track Applications2",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": []
+  },
+  "deleted": false,
+  "gitSyncId": "63cf9f5b2267bc42f09f0092_63cfa31f2267bc42f09f00bc"
+}
